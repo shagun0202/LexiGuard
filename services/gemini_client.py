@@ -157,6 +157,33 @@ def resolve_api_key() -> str:
     except Exception:
         pass
 
+    # 1b. Check raw secrets.toml on disk in case TOML has syntax errors (e.g. unquoted strings)
+    potential_paths = [
+        Path(".streamlit/secrets.toml"),
+        Path.home() / ".streamlit" / "secrets.toml",
+    ]
+    mount_dir = Path("/mount/src")
+    if mount_dir.is_dir():
+        for sub in mount_dir.iterdir():
+            if sub.is_dir():
+                potential_paths.append(sub / ".streamlit" / "secrets.toml")
+
+    for p in potential_paths:
+        try:
+            if p.is_file():
+                for line in p.read_text(encoding="utf-8").splitlines():
+                    line = line.strip()
+                    if "=" in line and not line.startswith("#"):
+                        k, v = line.split("=", 1)
+                        k = k.strip()
+                        v = v.strip().strip("'\"").strip()
+                        if any(term in k.upper() for term in ("GEMINI", "GOOGLE", "API_KEY")):
+                            if v and v != "your_gemini_api_key_here":
+                                os.environ["GEMINI_API_KEY"] = v
+                                return v
+        except Exception:
+            pass
+
     # 2. Check Streamlit session_state
     try:
         import streamlit as st
