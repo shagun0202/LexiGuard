@@ -97,18 +97,67 @@ def _parse_model_chain(env_var: str, default_chain: List[str]) -> List[str]:
 
 
 def resolve_api_key() -> str:
-    """Resolve Gemini API key across session state, environment, and Streamlit secrets.
+    """Resolve Gemini API key across Streamlit secrets, environment, and .env.
 
     Resolution precedence:
-    1. Streamlit session state ('custom_api_key' entered by user in UI)
+    1. Streamlit Cloud Secrets (st.secrets["GEMINI_API_KEY"] or st.secrets["general"]["GEMINI_API_KEY"])
     2. Environment variable GEMINI_API_KEY / GOOGLE_API_KEY
-    3. Streamlit Cloud Secrets (st.secrets["GEMINI_API_KEY"] or st.secrets["general"]["GEMINI_API_KEY"])
+    3. Streamlit session state ('custom_api_key' if present)
     4. Local .env file via dotenv
 
     Returns:
         Cleaned API key string, or empty string if not configured.
     """
-    # 1. Check Streamlit session_state
+    # 1. Check Streamlit Secrets (for Streamlit Community Cloud)
+    try:
+        import streamlit as st
+
+        if hasattr(st, "secrets"):
+            try:
+                for key_name in (
+                    "GEMINI_API_KEY",
+                    "GOOGLE_API_KEY",
+                    "gemini_api_key",
+                    "google_api_key",
+                    "API_KEY",
+                    "api_key",
+                    "GEMINI_KEY",
+                ):
+                    if key_name in st.secrets:
+                        val = str(st.secrets[key_name]).strip()
+                        if val and val != "your_gemini_api_key_here":
+                            os.environ["GEMINI_API_KEY"] = val
+                            return val
+
+                for section in ("general", "gemini", "default", "api_keys", "secrets"):
+                    if section in st.secrets and isinstance(st.secrets[section], dict):
+                        sec_dict = st.secrets[section]
+                        for key_name in (
+                            "GEMINI_API_KEY",
+                            "GOOGLE_API_KEY",
+                            "gemini_api_key",
+                            "google_api_key",
+                            "api_key",
+                        ):
+                            if key_name in sec_dict:
+                                val = str(sec_dict[key_name]).strip()
+                                if val and val != "your_gemini_api_key_here":
+                                    os.environ["GEMINI_API_KEY"] = val
+                                    return val
+
+                # Recursive scan across any secret key containing 'API_KEY' or 'GEMINI'
+                for k, v in st.secrets.items():
+                    if isinstance(v, str) and ("API_KEY" in k.upper() or "GEMINI" in k.upper()):
+                        val = v.strip()
+                        if val and val != "your_gemini_api_key_here":
+                            os.environ["GEMINI_API_KEY"] = val
+                            return val
+            except Exception:
+                pass
+    except Exception:
+        pass
+
+    # 2. Check Streamlit session_state
     try:
         import streamlit as st
 
@@ -120,37 +169,10 @@ def resolve_api_key() -> str:
     except Exception:
         pass
 
-    # 2. Check Environment Variable
+    # 3. Check Environment Variable
     env_key = os.getenv("GEMINI_API_KEY", "").strip() or os.getenv("GOOGLE_API_KEY", "").strip()
     if env_key and env_key != "your_gemini_api_key_here":
         return env_key
-
-    # 3. Check Streamlit Secrets (for Streamlit Community Cloud)
-    try:
-        import streamlit as st
-
-        if hasattr(st, "secrets"):
-            try:
-                for key_name in ("GEMINI_API_KEY", "GOOGLE_API_KEY", "gemini_api_key", "api_key"):
-                    if key_name in st.secrets:
-                        val = str(st.secrets[key_name]).strip()
-                        if val and val != "your_gemini_api_key_here":
-                            os.environ["GEMINI_API_KEY"] = val
-                            return val
-
-                for section in ("general", "gemini", "default", "api_keys"):
-                    if section in st.secrets and isinstance(st.secrets[section], dict):
-                        sec_dict = st.secrets[section]
-                        for key_name in ("GEMINI_API_KEY", "GOOGLE_API_KEY", "gemini_api_key", "api_key"):
-                            if key_name in sec_dict:
-                                val = str(sec_dict[key_name]).strip()
-                                if val and val != "your_gemini_api_key_here":
-                                    os.environ["GEMINI_API_KEY"] = val
-                                    return val
-            except Exception:
-                pass
-    except Exception:
-        pass
 
     # 4. Fallback to reloading .env if GEMINI_API_KEY was not explicitly empty in os.environ
     if "GEMINI_API_KEY" not in os.environ:

@@ -4,7 +4,17 @@ Main application entry point orchestrating layout, modular presentation tabs,
 and session state routing. Strictly non-monolithic orchestrator under 80 lines.
 """
 
+import os
 import streamlit as st
+
+# Sync Streamlit Cloud secrets to os.environ on startup
+try:
+    if hasattr(st, "secrets"):
+        for k in ("GEMINI_API_KEY", "GOOGLE_API_KEY"):
+            if k in st.secrets and st.secrets[k]:
+                os.environ[k] = str(st.secrets[k]).strip()
+except Exception:
+    pass
 
 from ui import (
     inject_custom_css,
