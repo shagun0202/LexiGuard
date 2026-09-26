@@ -177,3 +177,36 @@ def test_self_healing_json_retry(mock_gemini_response):
             allow_demo_fallback=False,
         )
         assert res == valid_data
+
+
+def test_resolve_api_key_from_env():
+    """Verify resolve_api_key extracts key from os.environ."""
+    from services.gemini_client import resolve_api_key
+    with patch.dict(os.environ, {"GEMINI_API_KEY": "test_env_key_12345"}):
+        assert resolve_api_key() == "test_env_key_12345"
+
+
+def test_resolve_api_key_from_session_state():
+    """Verify resolve_api_key prioritizes session_state over os.environ."""
+    import streamlit as st
+    from services.gemini_client import resolve_api_key
+    with patch.dict(os.environ, {"GEMINI_API_KEY": "env_key"}):
+        with patch.object(st, "session_state", {"custom_api_key": "user_ui_key"}):
+            assert resolve_api_key() == "user_ui_key"
+
+
+def test_resolve_api_key_from_st_secrets():
+    """Verify resolve_api_key falls back to st.secrets."""
+    import streamlit as st
+    from services.gemini_client import resolve_api_key
+    with patch.dict(os.environ, {"GEMINI_API_KEY": ""}):
+        with patch.object(st, "secrets", {"GEMINI_API_KEY": "cloud_secret_key"}):
+            assert resolve_api_key() == "cloud_secret_key"
+
+
+def test_resolve_api_key_empty_when_unconfigured():
+    """Verify resolve_api_key returns empty string when no key exists."""
+    from services.gemini_client import resolve_api_key
+    with patch.dict(os.environ, {"GEMINI_API_KEY": ""}):
+        assert resolve_api_key() == ""
+

@@ -5,7 +5,7 @@ from typing import Optional, Tuple
 
 import streamlit as st
 
-from services.gemini_client import get_last_call_info
+from services.gemini_client import get_last_call_info, resolve_api_key
 from utils.file_reader import compute_file_signature, extract_text_from_file
 from utils.legal_checker import check_legal_density
 
@@ -26,6 +26,80 @@ def render_sidebar() -> Tuple[Optional[str], Optional[str], Optional[str], Optio
             """,
             unsafe_allow_html=True,
         )
+
+        # 0. API Connection & Security Status
+        active_key = resolve_api_key()
+        if active_key:
+            masked = (
+                active_key[:4] + "••••" + active_key[-4:]
+                if len(active_key) >= 10
+                else "••••••••"
+            )
+            st.markdown(
+                f"""
+                <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 10px; padding: 8px 12px; margin-bottom: 14px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #10b981; font-weight: 700;">● GEMINI LIVE ACTIVE</span>
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #94a3b8;">{masked}</span>
+                    </div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+            with st.expander("⚙️ Key Config", expanded=False):
+                override_key = st.text_input(
+                    "Override Key",
+                    type="password",
+                    placeholder="Paste Gemini API key...",
+                    key="override_key_input",
+                )
+                if st.button("Apply Custom Key", key="btn_apply_override", use_container_width=True):
+                    if override_key.strip():
+                        st.session_state["custom_api_key"] = override_key.strip()
+                        st.success("API key updated!")
+                        st.rerun()
+        else:
+            st.markdown(
+                """
+                <div style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 10px; padding: 10px 12px; margin-bottom: 12px;">
+                    <div style="font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 700; color: #fbbf24; margin-bottom: 4px;">
+                        ⚠️ Running in Offline Demo Mode
+                    </div>
+                    <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #94a3b8; line-height: 1.4;">
+                        No Gemini API key detected. Paste your key below to activate live AI analysis:
+                    </div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+            input_key = st.text_input(
+                "Gemini API Key",
+                type="password",
+                placeholder="Paste key (e.g. AIzaSy... or AQ.Ab8...)",
+                label_visibility="collapsed",
+                key="direct_api_key_input",
+            )
+            if st.button("Connect Gemini Live 🚀", key="btn_connect_gemini", use_container_width=True):
+                if input_key.strip():
+                    st.session_state["custom_api_key"] = input_key.strip()
+                    st.success("Connected! Rerunning live...")
+                    st.rerun()
+                else:
+                    st.warning("Please enter a valid key.")
+
+            with st.expander("ℹ️ Streamlit Cloud Secrets Guide"):
+                st.markdown(
+                    """
+                    **Permanent Cloud Configuration:**
+                    1. Open [Streamlit Cloud Dashboard](https://share.streamlit.io/)
+                    2. Select App ➔ **Settings** ➔ **Secrets**
+                    3. Add:
+                    ```toml
+                    GEMINI_API_KEY = "your_actual_gemini_api_key"
+                    ```
+                    4. Click **Save**
+                    """
+                )
 
         # 1. Preset Repository Selector
         st.markdown(
@@ -243,8 +317,11 @@ def render_sidebar() -> Tuple[Optional[str], Optional[str], Optional[str], Optio
         # 6. Session Reset
         st.markdown("<div style='margin-top: 16px;'></div>", unsafe_allow_html=True)
         if st.button("↺ Reset Studio Session", use_container_width=True, help="Clear all caches and reset state."):
+            saved_key = st.session_state.get("custom_api_key")
             for k in list(st.session_state.keys()):
                 del st.session_state[k]
+            if saved_key:
+                st.session_state["custom_api_key"] = saved_key
             st.rerun()
 
     return doc_a_text, doc_a_name, doc_b_text, doc_b_name, reading_level, language
