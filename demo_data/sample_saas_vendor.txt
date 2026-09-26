@@ -1,0 +1,24 @@
+MASTER SAAS SERVICES AGREEMENT
+
+This Master SaaS Services Agreement ("Agreement") is dated March 1, 2026, between CyberScale Systems Ltd. ("Vendor"), and Customer ("Client").
+
+1. SUBSCRIPTION SERVICES AND SLA
+Vendor grants Client a non-exclusive, non-transferable subscription to access Vendor's cloud platform. Vendor guarantees 99.9% Monthly Uptime SLA, excluding scheduled maintenance. Service credits of 5% of monthly fees shall apply for each full 1% drop below SLA.
+
+2. FEES AND PAYMENT
+Client shall pay all fees annually in advance within thirty (30) days of invoice date. Late payments shall incur a penalty fee of 1.5% per month or the maximum legal rate.
+
+3. TERM AND AUTOMATIC RENEWAL
+The initial term shall be twelve (12) months. Thereafter, this Agreement shall automatically renew for successive twelve (12) month periods, unless either party delivers written notice of non-renewal at least sixty (60) days prior to the expiration of the current term.
+
+4. LIMITATION OF LIABILITY
+EXCEPT FOR WILLFUL MISCONDUCT OR BREACH OF CONFIDENTIALITY, IN NO EVENT SHALL EITHER PARTY'S TOTAL AGGREGATE LIABILITY ARISING OUT OF THIS AGREEMENT EXCEED THE TOTAL FEES PAID OR PAYABLE BY CLIENT UNDER THIS AGREEMENT IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM. NEITHER PARTY SHALL BE LIABLE FOR INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES.
+
+5. DATA PRIVACY AND SECURITY
+Vendor shall maintain administrative, physical, and technical safeguards compliant with SOC 2 Type II and GDPR standards to protect Client Data.
+
+6. TERMINATION FOR CAUSE
+Either party may terminate upon thirty (30) days' written notice if the other party materially breaches any term and fails to cure such breach within the thirty-day window.
+
+7. GOVERNING LAW
+Governed by Delaware law. Disputes resolved in the courts of New Castle County, Delaware.

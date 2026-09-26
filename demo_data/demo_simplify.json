@@ -1,0 +1,33 @@
+{
+  "summary": "This Mutual Non-Disclosure Agreement between Apex Innovations and Horizon Analytics allows both companies to share confidential business, technical, and product data while exploring a joint venture. Both parties must safeguard shared secrets with reasonable care, use them solely for evaluation, and return or destroy all files upon request within 30 calendar days. The agreement lasts for two years, with confidentiality obligations enduring for five years post-disclosure (and trade secrets protected perpetually). Any legal disputes must be settled through binding arbitration in San Francisco under California law.",
+  "key_points": [
+    "Two-way bilateral confidentiality: Both Apex and Horizon are bound by equal non-disclosure restrictions.",
+    "Strict 5-year confidentiality window following disclosure, with trade secrets protected forever.",
+    "Standard legal exceptions apply for publicly available or independently created data.",
+    "Mandatory 30-day return or certified destruction of confidential documents upon demand.",
+    "Permits emergency injunctions without requiring bond if secrets are leaked.",
+    "Disputes bypass traditional court trials and must be resolved through binding AAA arbitration in California."
+  ],
+  "glossary": [
+    {
+      "term": "In Perpetuity",
+      "definition": "Continuing indefinitely without any expiration date or time limit.",
+      "context": "Trade Secrets remain protected in perpetuity under applicable law."
+    },
+    {
+      "term": "Injunctive Relief",
+      "definition": "A court order requiring a party to immediately halt a specific harmful action rather than just paying money damages.",
+      "context": "Disclosing Party shall be entitled to seek equitable relief, including preliminary and permanent injunctive relief."
+    },
+    {
+      "term": "As-Is",
+      "definition": "Provided in its present condition with zero guarantees of quality, fitness, or functionality.",
+      "context": "ALL CONFIDENTIAL INFORMATION IS PROVIDED 'AS IS' WITHOUT WARRANTY OF ANY KIND."
+    },
+    {
+      "term": "Severability",
+      "definition": "A rule stating that if a single clause is ruled illegal by a judge, the rest of the contract stays active.",
+      "context": "If any provision is held invalid, the remaining provisions shall continue in full force and effect."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "overall_comparison": "Document A (Apex NDA) is a reciprocal mutual confidentiality agreement with equal obligations. Document B (Zenith Employment) is a unilateral employment agreement containing restrictive non-compete and intellectual property transfer clauses. Document A is significantly more balanced and favorable for mutual business evaluation.",
+  "favorability": "Document A",
+  "differences": [
+    {
+      "clause_topic": "Scope of Obligations",
+      "doc_a_provision": "Mutual bilateral confidentiality protecting both Apex and Horizon equally.",
+      "doc_b_provision": "Unilateral IP assignment and post-employment non-compete binding the individual.",
+      "more_favorable_to": "Document A",
+      "analysis": "Document A offers mutual reciprocity, whereas Document B restricts the individual's future competitive freedom."
+    },
+    {
+      "clause_topic": "Duration of Restrictions",
+      "doc_a_provision": "5-year confidentiality period with perpetual protection for trade secrets.",
+      "doc_b_provision": "12-month post-termination non-compete and 18-month non-solicitation window.",
+      "more_favorable_to": "Document A",
+      "analysis": "While Document A has a longer confidentiality duration, Document B imposes direct career livelihood restrictions."
+    },
+    {
+      "clause_topic": "Dispute Resolution Venue",
+      "doc_a_provision": "Binding arbitration in San Francisco, California under AAA Commercial Rules.",
+      "doc_b_provision": "Governed by New York law without specified mandatory arbitration.",
+      "more_favorable_to": "Document A",
+      "analysis": "Document A provides confidential, expedited AAA arbitration."
+    }
+  ],
+  "missing_in_doc_a": [
+    "Non-compete restrictive covenants",
+    "Comprehensive IP assignment and work-made-for-hire provisions",
+    "Executive compensation and severance terms"
+  ],
+  "missing_in_doc_b": [
+    "Mutual confidentiality reciprocity",
+    "Mandatory return or destruction protocol for company records within 30 days"
+  ]
+}

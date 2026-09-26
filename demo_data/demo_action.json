@@ -1,0 +1,66 @@
+{
+  "checklist": [
+    {
+      "task": "Verify legal entity names and state of incorporation (Apex Innovations Inc. & Horizon Analytics LLC)",
+      "category": "Corporate Authority",
+      "completed": false
+    },
+    {
+      "task": "Define specific boundaries for disclosed technical secrets to ensure clarity on what constitutes Confidential Information",
+      "category": "Scope",
+      "completed": false
+    },
+    {
+      "task": "Establish internal tracking mechanism for marking electronic files and documents as 'Confidential'",
+      "category": "Operations",
+      "completed": false
+    },
+    {
+      "task": "Confirm team members who will have access to counterparty materials are briefed on 5-year non-disclosure terms",
+      "category": "Compliance",
+      "completed": false
+    },
+    {
+      "task": "Evaluate whether San Francisco, CA arbitration venue is cost-feasible or propose virtual hearing stipulations",
+      "category": "Legal Venue",
+      "completed": false
+    },
+    {
+      "task": "Confirm authorized signatory holds officer-level signing capacity (CEO / Managing Director)",
+      "category": "Execution",
+      "completed": false
+    }
+  ],
+  "deadlines": [
+    {
+      "task": "Initial Agreement Expiration",
+      "responsible_party": "Both Parties",
+      "deadline": "2 years from Effective Date (January 15, 2028)"
+    },
+    {
+      "task": "General Confidentiality Survival Window",
+      "responsible_party": "Receiving Party",
+      "deadline": "5 years following each disclosure event"
+    },
+    {
+      "task": "Destruction or Return of Materials",
+      "responsible_party": "Receiving Party",
+      "deadline": "Within 30 calendar days upon written demand"
+    },
+    {
+      "task": "Trade Secrets Non-Use Protection",
+      "responsible_party": "Receiving Party",
+      "deadline": "In perpetuity (indefinite)"
+    }
+  ],
+  "lawyer_questions": [
+    "Does our existing IP portfolio contain trade secrets that could be compromised under the 'AS IS' warranty disclaimer?",
+    "Should we negotiate a carve-out for residual knowledge retained in human memory without bad-faith intent?",
+    "Is the waiver of injunction bonding customary in this jurisdiction or does it expose us to disproportionate leverage?",
+    "Can we amend the dispute clause to mandate non-binding mediation before escalating to expensive AAA arbitration?",
+    "Does the definition of Confidential Information require marking in writing within 30 days for oral disclosures?",
+    "Are our independent contractors and fractional consultants sufficiently covered under the permitted recipient group?",
+    "Does California Labor Code Section 16600 or recent FTC guidance affect any implied restrictive covenants in this agreement?",
+    "What specific protocol should we follow to certify electronic record destruction given automated cloud backup snapshots?"
+  ]
+}

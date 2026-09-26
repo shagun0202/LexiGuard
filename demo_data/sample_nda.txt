@@ -1,0 +1,45 @@
+MUTUAL NON-DISCLOSURE AGREEMENT
+
+This Mutual Non-Disclosure Agreement ("Agreement") is entered into as of January 15, 2026 ("Effective Date"), by and between Apex Innovations Inc., a Delaware corporation having its principal office at 100 Tech Boulevard, Suite 400, San Francisco, CA 94107 ("Apex"), and Horizon Analytics LLC, a California limited liability company having its principal office at 500 Market Street, San Jose, CA 95113 ("Horizon").
+
+1. PURPOSE
+The parties wish to explore a potential strategic business relationship concerning automated enterprise intelligence systems ("Purpose"). In connection with this Purpose, each party may disclose to the other certain proprietary and confidential information.
+
+2. CONFIDENTIAL INFORMATION
+"Confidential Information" means any and all technical, scientific, business, financial, or product information disclosed by one party ("Disclosing Party") to the other party ("Receiving Party"), whether orally, visually, or in writing, that is designated as confidential or that reasonably should be understood to be confidential given the nature of the information and circumstances of disclosure.
+
+3. EXCLUSIONS FROM CONFIDENTIALITY
+Confidential Information does not include information that: (a) is or becomes publicly known through no breach of this Agreement by Receiving Party; (b) was already known to Receiving Party prior to disclosure without confidentiality restrictions; (c) is independently developed by Receiving Party without reference to or reliance upon Disclosing Party's Confidential Information; or (d) is rightfully received from a third party without duty of confidentiality.
+
+4. OBLIGATIONS OF RECEIVING PARTY
+Receiving Party agrees to: (a) protect Disclosing Party's Confidential Information with at least the same degree of care it uses to protect its own confidential information of like kind, but in no event less than a reasonable degree of care; (b) use Confidential Information solely to evaluate and pursue the Purpose; and (c) restrict disclosure of Confidential Information solely to its employees, officers, and legal advisors who have a need to know and who are bound by confidentiality obligations at least as restrictive as those herein.
+
+5. TERM AND SURVIVAL
+This Agreement shall remain in effect for a period of two (2) years from the Effective Date. The confidentiality and non-use obligations set forth herein shall survive the termination or expiration of this Agreement and continue for a period of five (5) years following the date of initial disclosure, except with respect to Trade Secrets, which shall remain protected in perpetuity under applicable law.
+
+6. RETURN OF MATERIALS
+Upon written request by Disclosing Party, Receiving Party shall promptly return or certify in writing the destruction of all tangible copies, notes, summaries, and electronic records containing Confidential Information within thirty (30) calendar days.
+
+7. NO WARRANTY AND AS-IS DISCLOSURE
+ALL CONFIDENTIAL INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+
+8. REMEDIES AND INJUNCTIVE RELIEF
+The parties acknowledge that any unauthorized use or disclosure of Confidential Information may cause irreparable harm for which monetary damages alone would be inadequate. Accordingly, Disclosing Party shall be entitled to seek equitable relief, including preliminary and permanent injunctive relief, without the necessity of posting a bond.
+
+9. GOVERNING LAW AND DISPUTE RESOLUTION
+This Agreement shall be governed by, construed, and enforced in accordance with the substantive laws of the State of California, without regard to its conflict of law principles. Any dispute arising out of or related to this Agreement shall be submitted to binding arbitration in San Francisco, California under the Commercial Rules of the American Arbitration Association (AAA).
+
+10. MISCELLANEOUS
+This Agreement constitutes the entire agreement between the parties concerning the subject matter hereof and supersedes all prior oral or written discussions. No amendment or waiver of any provision shall be valid unless in writing signed by authorized representatives of both parties. If any provision is held invalid, the remaining provisions shall continue in full force and effect.
+
+IN WITNESS WHEREOF, the parties hereto have executed this Mutual Non-Disclosure Agreement as of the date first written above.
+
+APEX INNOVATIONS INC.
+By: /s/ Elena Rostova
+Name: Elena Rostova
+Title: Chief Executive Officer
+
+HORIZON ANALYTICS LLC
+By: /s/ Marcus Chen
+Name: Marcus Chen
+Title: Managing Director

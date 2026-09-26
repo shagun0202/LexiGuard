@@ -1,0 +1,36 @@
+EXECUTIVE EMPLOYMENT AGREEMENT
+
+This Executive Employment Agreement ("Agreement") is made effective as of February 1, 2026, by and between Zenith Cloud Technologies, Inc., a Delaware corporation ("Company"), and David Vance ("Executive").
+
+1. POSITION AND DUTIES
+Company agrees to employ Executive in the position of Vice President of Engineering. Executive shall report to the Chief Executive Officer and shall perform all duties customary to such office. Executive agrees to devote substantially all full-time business efforts to Company's business.
+
+2. COMPENSATION AND BENEFITS
+(a) Base Salary: Company shall pay Executive an annual base salary of $240,000, payable in accordance with Company's regular payroll practices.
+(b) Annual Incentive Bonus: Executive shall be eligible for an annual performance target bonus of up to 30% of Base Salary, contingent on achieving corporate milestones approved by the Board of Directors.
+(c) Equity Incentive: Subject to Board approval, Executive will receive an option to purchase 150,000 shares of Common Stock, vesting over four (4) years with a one-year cliff.
+
+3. AT-WILL EMPLOYMENT AND TERMINATION
+(a) Employment is at-will. Either Company or Executive may terminate this Agreement at any time, with or without Cause, upon thirty (30) days' advance written notice.
+(b) Severance: If Company terminates Executive's employment without Cause, Executive shall be entitled to receive three (3) months of continuation Base Salary and COBRA premium reimbursement, contingent upon executing a comprehensive general release of claims in favor of Company.
+
+4. NON-COMPETITION AND NON-SOLICITATION
+(a) Non-Compete: During employment and for a period of twelve (12) months following termination of employment for any reason, Executive shall not directly or indirectly engage in, manage, operate, join, or assist any business that competes directly with Company's cloud enterprise storage products within the United States.
+(b) Non-Solicitation: For eighteen (18) months post-termination, Executive shall not induce or solicit any customer, vendor, or employee of Company to terminate their relationship with Company.
+
+5. INTELLECTUAL PROPERTY ASSIGNMENT
+Executive agrees that all inventions, discoveries, improvements, source code, and copyrighted works conceived, created, or developed by Executive during the term of employment that relate to Company's business shall be the sole and exclusive property of Company ("Work Made for Hire").
+
+6. INDEMNIFICATION AND LIABILITY
+Company agrees to indemnify Executive to the maximum extent permitted by Delaware law against claims arising from Executive's good-faith performance of employment duties.
+
+7. GOVERNING LAW
+This Agreement shall be construed under the laws of the State of New York without regard to conflict of laws principles.
+
+ZENITH CLOUD TECHNOLOGIES, INC.
+By: /s/ Sarah Jenkins, CEO
+Date: February 1, 2026
+
+EXECUTIVE
+By: /s/ David Vance
+Date: February 1, 2026
