@@ -66,9 +66,9 @@ DEFAULT_LIGHT_CHAIN: List[str] = [
     "gemini-flash-lite-latest",
 ]
 DEFAULT_HEAVY_CHAIN: List[str] = [
-    "gemini-3.6-flash",
     "gemini-3.5-flash-lite",
     "gemini-3.1-flash-lite",
+    "gemini-3.6-flash",
     "gemini-flash-lite-latest",
 ]
 
